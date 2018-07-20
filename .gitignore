@@ -32,3 +32,4 @@ _ReSharper*/
 #Ignore Sln for HTML 5 app
 src/HTML5/*.sln
 src/HTML5/.vs/
+.DS_Store

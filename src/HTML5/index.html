@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>NetPonto - Sorteio</title>
+    <title>TugaIT - Raffle - powered by netponto</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
@@ -13,19 +13,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <img src="images/logo.png" alt="NetPonto Sorteio" title="NetPonto Sorteio" class="img-responsive" />
+                <img src="images/logo.png" alt="Tuga IT Raffle" title="Tuga IT Raffle" class="img-responsive" />
+                <div style="font-size: 10px;margin-left:50px;margin-bottom: 5px;">This raffle is powered by netponto</div>
             </div>
             <div class="col-md-6 text-right">
                 <h1 data-bind="text: title"></h1>
             </div>
+           
         </div>
 
         <!-- Tab list -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation"><a href="#tab-config" aria-controls="config" role="tab" data-toggle="tab">Config</a></li>
-            <li role="presentation" class="active"><a href="#tab-presencas" aria-controls="presenças" role="tab" data-toggle="tab">Presenças</a></li>
-            <li role="presentation"><a href="#tab-sorteio" aria-controls="sorteio" role="tab" data-toggle="tab">Sorteio</a></li>
-            <li role="presentation" data-bind="visible: started"><a href="#tab-winners" aria-controls="vencedores" role="tab" data-toggle="tab">Vencedores</a></li>
+            <li role="presentation" class="active"><a href="#tab-presencas" aria-controls="presenças" role="tab" data-toggle="tab">Participants</a></li>
+            <li role="presentation"><a href="#tab-sorteio" aria-controls="sorteio" role="tab" data-toggle="tab">Raffle</a></li>
+            <li role="presentation" data-bind="visible: started"><a href="#tab-winners" aria-controls="vencedores" role="tab" data-toggle="tab">Winners</a></li>
             <li role="presentation" class="pull-right">
                 <button class="btn btn-success" data-bind="click: rollIt, visible: started" href="#" aria-controls="next random" role="tab">
                     <span class="glyphicon glyphicon-random"></span>
@@ -40,18 +42,18 @@
             <div role="tabpanel" class="tab-pane fade" id="tab-config">
                 <div class="row-fluid">
                     <div class="form-group">
-                        <label for="title">Título:</label>
-                        <input type="email" class="form-control" id="title" data-bind="textInput:title" placeholder="Título">
+                        <label for="title">Title:</label>
+                        <input type="email" class="form-control" id="title" data-bind="textInput:title" placeholder="Title">
                     </div>
                     <div class="form-group">
-                        <a href="#" data-bind="click:nuke_storage">Limpar dados guardados em <em>localstorage</em></a>
+                        <a href="#" data-bind="click:nuke_storage">Clean data in <em>localstorage</em></a>
                     </div>
                     <hr />
                     <div class="row-fluid">
                         <div class="col-md-4">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4>Como funciona?</h4>
+                                    <h4>How does this work?</h4>
                                 </div>
                                 <div class="panel-body">
                                     <p class="text-justify">Carregue os participantes por ficheiro e/ou manualmente através dos botões disponibilizados na <code>tab</code> "<mark>Presenças</mark>".</p>
@@ -63,27 +65,26 @@
                         <div class="col-md-4">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4>Sortear participantes?</h4>
+                                    <h4>Raffle?</h4>
                                 </div>
                                 <div class="panel-body">
                                     <p class="text-justify">
-                                        Com a tecla <code>h</code> poderá fazer sair o próximo. Nota que, apenas quando sai um, é que poderá fazer
-                                        sair o seguinte.
+                                        With the key <code>h</code> you can raffle the next participant. You can only raflle one participant each time.
                                     </p>
                                     <p class="text-justify">
-                                        Existe também um botão <button class="btn btn-success"><span class="glyphicon glyphicon-random"></span></button> no topo das tabs, no lado direito, logo após de dar inicio ao sorteio.
+                                        There is also a <button class="btn btn-success"><span class="glyphicon glyphicon-random"></span></button> icon by the tabs, that you can use to start the raffle.
                                     </p>
-                                    <p class="text-justify">Sempre que sai um vencedor, esse botão também aparece no <code>modal</code>.</p>
+                                    <p class="text-justify">Every time a winner is chosen, this button also appears in the <code>modal</code>.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4>Vencedores?</h4>
+                                    <h4>Winners?</h4>
                                 </div>
                                 <div class="panel-body">
-                                    <p class="text-justify">Após dar inicio ao sorteio, uma nova <code>tab</code> irá aparecer com o nome "<mark>Vencedores</mark>". Aí, por cada vez que sair um premiado, o seu nome irá aparecer numa lista.</p>
+                                    <p class="text-justify">After starting the raffle, a new <code>tab</code> will appear with the name "<mark>Wiiners</mark>". Each time a winner is selected, his name will appear on the list.</p>
                                 </div>
                             </div>
                         </div>
@@ -96,9 +97,9 @@
                 <div class="row-fluid">
                     <div class="col-xs-4 col-md-4">
                         <div class="form-group">
-                            <label for="fileInput">Carregar lista de participantes</label>
+                            <label for="fileInput">Load participant list</label>
                             <input type="file" data-bind="event: { change: function() { load_file($element.files[0]) } }" id="fileInput">
-                            <p class="help-block">Ficheiro de texto simples com um nome por linha.</p>
+                            <p class="help-block">Simple text file with one name per line.</p>
                         </div>
                     </div>
 
@@ -127,7 +128,7 @@
                     <div class="col-md-4 col-lg-4">&nbsp;</div>
                     <div class="col-md-4 col-lg-4">
                         <div class="center-block">
-                            <button type="button" id="start" data-bind="click: start" class="btn btn-lg btn-block btn-primary">Iniciar</button>
+                            <button type="button" id="start" data-bind="click: start" class="btn btn-lg btn-block btn-primary">Start</button>
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-4">&nbsp;</div>
@@ -163,8 +164,7 @@
             <a href="#" style="color: black; text-decoration: initial;" data-bind="attr: {title:version}" style="">π</a>
         </div>
     </div>
-
-    <!-- Winners Modal -->
+        <!-- Winners Modal -->
     <div class="modal fade" id="winnersModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

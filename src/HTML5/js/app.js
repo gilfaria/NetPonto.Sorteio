@@ -6,7 +6,7 @@ var Attendee = function (data) {
 var PageViewModel = function () {
     var self = this;
 
-    self.title = ko.observable("Xº Reunião NetPonto - Y");
+    self.title = ko.observable("Tuga IT 2018 Summer Edition");
     self.attendees = ko.observableArray([]);
     self.winners = ko.observableArray([]);
     self.prizes = ko.observableArray([]);
